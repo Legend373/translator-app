@@ -1,15 +1,5 @@
+import Home from "./pages/home";
 
-
-function App() {
-  
-
-  return (
-    <>
-      <div className="bg-black">
-        <h1 className="text-white">Tailwind working</h1>
-      </div>
-    </>
-  )
+export default function App() {
+  return <Home />;
 }
-
-export default App

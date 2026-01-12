@@ -8,14 +8,14 @@ This project demonstrates professional frontend architecture, API integration, s
 
 ## 🚀 Features
 
-- 🔤 Translate **English → German**
-- ⚡ Fast and accurate Google Translation (RapidAPI)
-- 🧠 Global state management with Redux Toolkit
-- 🧩 Clean component architecture
-- 📱 Fully responsive UI
-- 🔐 Secure API key handling via environment variables
-- 🧪 Unit test coverage
-- 🔄 GitHub CI pipeline
+-  Translate **English → German**
+-  Fast and accurate Google Translation (RapidAPI)
+-  Global state management with Redux Toolkit
+-  Clean component architecture
+-  Fully responsive UI
+-  Secure API key handling via environment variables
+-  Unit test coverage
+-  GitHub CI pipeline
 
 ---
 
@@ -32,19 +32,46 @@ This project demonstrates professional frontend architecture, API integration, s
 
 ---
 
+## API Used
+
+API Name: Google Translate via RapidAPI
+
+Endpoint: /translate/mini
+
+Source Language: English (en)
+
+Target Language: German (de)
+
+Request Format: POST JSON
+
+
 ## 📂 Project Structure
 
 src/
-├── api/ # RapidAPI client
-├── components/ # UI components
-├── pages/ # Page containers
-├── store/ # Redux logic
-├── tests/ # Unit tests
+├── api/         # RapidAPI client
+│   └── translateApi.js
+├── components/  # UI components
+│   ├── Translator.jsx
+│   ├── TextInput.jsx
+│   └── TextOutput.jsx
+├── pages/       # Page containers
+│   └── Home.jsx
+├── store/       # Redux logic
+│   ├── store.js
+│   └── translationSlice.js
+├── tests/       # Unit tests
+│   └── Translator.test.jsx
 ├── App.jsx
 └── main.jsx
 
 
 ---
+## UI Showcase
+
+### Screenshot  – Working Translator Interface
+![Main Chat Interface](public/image.png)
+
+
 
 ## 🔐 Environment Setup
 
@@ -54,42 +81,29 @@ Create a `.env` file in the project root:
 VITE_RAPID_API_KEY=YOUR_RAPIDAPI_KEY
 VITE_RAPID_API_HOST=google-translate113.p.rapidapi.com
 
-
-Install & Run
+---
+## Install & Run
 
 npm install
 npm run dev
 
-🔄 How It Works
-
-User types English text
-
-Redux stores input
-
-AsyncThunk calls RapidAPI
-
-Google Translate returns German
-
-Redux updates UI
-
-Run Tests
+---
+## Run Tests
 
 npm test
 
 
-🌐 API Used
+---
 
-Google Translate via RapidAPI
-
-Endpoint: /text
-
-Source: English
-
-Target: German
-
-📌 Notes
+## 📌 Notes
 
 API keys are securely stored using Vite environment variables.
+
+The translator uses the “mini” endpoint for simple, fast translations.
+
+For more advanced translations with synonyms and alternate writing, the full endpoint /translate can be used.
+
+The app automatically handles loading states, API errors, and empty input.
 
 CI pipeline runs tests and builds on every push.
 
